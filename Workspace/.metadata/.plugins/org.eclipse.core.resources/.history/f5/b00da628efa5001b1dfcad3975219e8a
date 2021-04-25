@@ -1,0 +1,24 @@
+package colecao;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Mapa {
+	
+	public static void main(String[] args) {
+		
+		Map<Integer, String> usuarios = new HashMap<>();
+		
+		usuarios.put(1, "Marcelo");
+		usuarios.put(2, "Joaquim");
+		usuarios.put(30, "Robert");
+		
+		System.out.println(usuarios.size());
+		
+		System.out.println(usuarios.isEmpty());
+		
+		System.out.println("KeySet: " + usuarios.keySet());
+		
+	}
+
+}

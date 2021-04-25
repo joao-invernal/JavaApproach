@@ -1,0 +1,32 @@
+package colecao;
+
+import java.util.ArrayList;
+
+public class Lista {
+	
+	public static void main(String[] args) {
+		
+		ArrayList<Usuario> lista = new ArrayList<>();
+			
+		Usuario u1 = new Usuario("Ana");
+		
+		lista.add(u1); //Adc o objeto criado, normal
+		
+		//Adicionando a instância do objeto, sendo criado no parâmetro
+		lista.add(new Usuario("Carlos"));
+		lista.add(new Usuario("Charles"));
+		lista.add(new Usuario("Jeferson"));
+		lista.add(new Usuario("Carlos"));//Em listas podemos repetir valores.
+		
+		for(Usuario u : lista) {
+			System.out.println(u.nome);
+		}
+		
+		//Ao contrário do conjunto, lista é indexada, e pode ser acessado através
+		System.out.println(lista.get(3));
+		
+		
+		
+	}
+
+}

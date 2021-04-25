@@ -1,0 +1,20 @@
+package colecao;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Conjunto {
+	
+	public static void main(String[] args) {
+		
+		//Conjunto heterogêneo (Aceita vários tipos de valores)
+		Set<String> hetero = new HashSet<String>();
+		
+		hetero.add(null);
+		
+		System.out.println(hetero);
+		
+		
+	}
+
+}
