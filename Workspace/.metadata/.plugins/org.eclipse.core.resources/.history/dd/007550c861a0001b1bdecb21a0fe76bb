@@ -1,0 +1,14 @@
+package test;
+
+import javax.swing.JOptionPane;
+
+//Conversão de String para número (CUIDADO: nem todas as strings são números)
+public class ConversaoStringNumero {
+	
+	public static void main(String[] args) {
+		String valor1 = JOptionPane.showInputDialog("Digite o primeiro número");
+		
+		String valor2 = JOptionPane.showInputDialog("Digite o segundo número");
+	}
+
+}

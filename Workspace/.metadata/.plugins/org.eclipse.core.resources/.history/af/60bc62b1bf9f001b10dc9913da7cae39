@@ -1,0 +1,32 @@
+package test;
+
+import java.util.Scanner;
+
+public class Console {
+	
+	public static void main(String[] args) {
+		
+		double prize = 65000.88;
+		
+		//Embora o tipo seja double, perceba que a formatação assume a nomenclatura %. numero de casas decimais e finalmente f
+		System.out.printf("Prêmio: %.2f", prize);
+		System.out.print("\nParabéns!\n Quem deverá receber o valor na conta? ");
+		
+		//Criando uma instância para a leitura de entrada no sistema
+		Scanner leia = new Scanner(System.in); // E em seguida já faço a sua chamada para a resposta do usuário
+		
+		String winner = leia.nextLine();
+		
+		System.out.println("Número de telefone: ");
+		int numberPhone = leia.nextInt();
+		
+		System.out.printf("\nOk %s, entramos em contato para confirmar a transação\nAté mais!", winner);
+		
+		
+		
+		
+		
+		
+	}
+
+}

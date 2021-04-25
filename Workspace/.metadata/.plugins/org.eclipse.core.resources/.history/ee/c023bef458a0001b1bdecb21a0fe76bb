@@ -1,0 +1,11 @@
+package test;
+
+public class ConversaoNumeroString {
+
+	public static void main(String[] args) {
+		Integer num1 = 10000;
+		//Usando o wrapper para obter um conversão para String, onde tem o método para revelar o comprimento.
+		System.out.println(num1.toString().length());
+		
+	}
+}

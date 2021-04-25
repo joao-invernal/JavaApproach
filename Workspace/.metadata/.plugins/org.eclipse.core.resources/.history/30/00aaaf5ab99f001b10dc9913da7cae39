@@ -1,0 +1,15 @@
+package test;
+
+public class TipoString {
+	
+	public static void main(String[] args) {
+		
+		String str = "Hi!";
+		
+		System.out.println(str.charAt(1));
+		
+		System.out.println(str.startsWith("Oi!"));
+		
+	}
+
+}
