@@ -1,9 +1,0 @@
-package colecao;
-
-public class Usuario {
-	
-	String nome;
-	
-	
-
-}

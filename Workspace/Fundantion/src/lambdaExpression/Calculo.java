@@ -64,7 +64,7 @@ public interface Calculo {
 		
 		BinaryOperator<Integer> autoCalculo = (a, b) -> a * b; // O binaryOperator recebe dois operandos e r
 		
-		System.out.println(autoCalculo.apply(2, 3));
+		System.out.println("Valores multiplicado com BinaryOperator " + autoCalculo.apply(2, 3));
 	}
 }
 
