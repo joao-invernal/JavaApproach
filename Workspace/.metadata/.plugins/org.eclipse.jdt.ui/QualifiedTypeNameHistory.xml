@@ -7,8 +7,15 @@
     <fullyQualifiedTypeName name="colecao.Usuario"/>
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
-    <fullyQualifiedTypeName name="java.util.function.BinaryOperator"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.function.BinaryOperator"/>
+    <fullyQualifiedTypeName name="java.util.function.BiFunction"/>
+    <fullyQualifiedTypeName name="java.util.function.Function"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="lambdaExpression.Challenge.Produto"/>
+    <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
+    <fullyQualifiedTypeName name="java.util.function.UnaryOperator"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
