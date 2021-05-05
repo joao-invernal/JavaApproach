@@ -1,0 +1,8 @@
+Debugando com Eclipse: 
+
+Na linha do ínicio do método que será analisado, clica duas vezes no número à esquerda (tem que ter algum código não pode estar vazio).
+Na sequência, pressiona o botão direito -> Debug as -> Java Application
+
+A IDE vai exibir uma nova perspectiva. Na parte superior estará localizada alguma opções - com atalho.
+Step Over(F6) -> Vai pra próxima linha de código.
+Step Into (F5) -> Vai pra dentro da implementação de um método/classe para executar o seu passo-a-passo de modo procedural.
