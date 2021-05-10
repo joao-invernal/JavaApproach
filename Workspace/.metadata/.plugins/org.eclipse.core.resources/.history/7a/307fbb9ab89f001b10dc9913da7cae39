@@ -1,0 +1,20 @@
+package test;
+
+import java.util.Date;
+
+public class Import {
+	
+	public static void main(String[] args) {
+		
+		Date data = new Date();
+		System.out.println(data);
+		
+		Integer variavelNumerica = 3;
+		
+		System.out.println(variavelNumerica.doubleValue());
+		
+//		JButton botao = new JButton();
+		
+	}
+
+}

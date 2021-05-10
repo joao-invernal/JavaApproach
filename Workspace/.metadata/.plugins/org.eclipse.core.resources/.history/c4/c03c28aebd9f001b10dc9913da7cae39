@@ -1,0 +1,13 @@
+package test;
+
+public class Console {
+	
+	public static void main(String[] args) {
+		
+		double prize = 65000.88;
+		
+		System.out.printf("Prêmio: %.2f", prize);
+		
+	}
+
+}

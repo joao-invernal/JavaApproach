@@ -1,4 +1,0 @@
-Como exportar um arquivo JAR no Eclipse:
-
-Botão direito emcima do projeto > Export... >  Java > JAR file
-Faça a configuração da saída com diretório de saída e etc...

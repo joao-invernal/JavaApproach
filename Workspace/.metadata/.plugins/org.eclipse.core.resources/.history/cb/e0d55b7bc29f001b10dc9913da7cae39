@@ -1,0 +1,29 @@
+package test;
+
+
+//Objeto(classe) Vs Primitivo (tipo)
+public class Wrappers {
+
+	public static void main(String[] args) {
+
+		
+		//Veja as classes que representa seus respectivos tipos primitivos!
+		
+		Integer inteiro = 10;
+		
+		Double pontoFlutuante = 5.5;
+		
+		//DIFERENÇA: As variáveis declaradas com tipo primitivo não carregam comportamento (atravér da notação ponto) - porém os "objetos" sim!
+		
+		System.out.println(inteiro.equals(10.0)); // Return: false -- Pois 10 é diferente de 10.0 (dada a nuance entre os tipos)
+		
+		System.out.println(pontoFlutuante.toString());// Double pra String!
+		
+		//Confirmando a transformação:
+		System.out.print("Value in the Target is String: ");
+		System.out.println(pontoFlutuante.toString() instanceof String);
+		
+		
+	}
+	
+}
