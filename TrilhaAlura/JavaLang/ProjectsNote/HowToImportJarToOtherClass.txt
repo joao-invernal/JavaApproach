@@ -1,0 +1,6 @@
+Como importar classes de um arquivo JAR:
+
+A nível da pasta do projeto (pai de src) é criado uma pasta para abrigar esse módulos, geralmente com nome de libs.
+Lá devera conter o arquivo zipado (JAR)
+clica com o botão direito emcima do arquivo JAR > Build Path > Add Build Path
+Automaticamente será criado uma pasta Referneced Libraries, permitindo então, apartir de agora que seja utilizado classes daquele arquivo.
