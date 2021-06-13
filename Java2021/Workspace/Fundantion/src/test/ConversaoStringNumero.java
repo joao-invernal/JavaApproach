@@ -12,7 +12,7 @@ public class ConversaoStringNumero {
 		String valor2 = JOptionPane.showInputDialog("Digite o segundo número");
 		
 		
-		System.out.println(valor1 + valor2);
+		System.out.println("Concatenação dos valores no formato String: " + valor1 + valor2);
 		
 		
 		double numero1 = Double.parseDouble(valor1);
