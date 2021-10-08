@@ -1,0 +1,127 @@
+Padrões de projeto são soluções genéricas para problemas recorrentes do desenvolvimento de 
+software orientado a objetos;
+Existem três principais categorias de padrões de projeto:
+ - Comportamentais (que serão vistos neste treinamento)
+ - Estruturais
+ - Criacionais
+
+Strategy: 
+A técninca consiste em diminuir a complexidade do nosso código, trocando múltiplas condicionais por classes.
+
+Chain of Resposability: 
+Realiza o encadeamento de algoritmos que possívelmente será executada
+
+
+Template Method 
+é um padrão de projeto comportamental que define o esqueleto de um algoritmo na superclasse mas deixa as 
+subclasses sobrescreverem etapas específicas do algoritmo sem modificar sua estrutura.
+
+
+State
+padrão de projeto comportamental que permite que um objeto altere seu comportamento 
+quando seu estado interno muda. Parece como se o objeto mudasse de classe.
+
+Command 
+é um padrão de projeto comportamental que transforma um pedido em um objeto independente que contém toda a 
+informação sobre o pedido, e pode ser acionada por interfaces distintas.
+
+
+Observer
+é um padrão de projeto comportamental que permite que você defina um mecanismo de assinatura para 
+notificar múltiplos objetos sobre quaisquer eventos que aconteçam com o objeto que eles estão observando.
+
+
+
+
+
+
+
+O Strategy é um padrão de projeto comportamental que permite que você defina uma família de algoritmos, 
+coloque-os em classes separadas, e faça os objetos deles intercambiáveis.
+
+Essa segregação promove uma maior manutenibilidade do código, tornando consequentemente, o mesmo mais 'limpo' e legível
+O elo de conexão entre esses componentes 'irmãos' será uma interface que será parametrizada como argumento para a chamada do membro; o que anteriormente era uma estrutura de condição que fazia a implementação no próprio contexto para poder validar e tratar determinado cenário. Com a adoção do Strategy, esse contexto para a ser agnóstico da implementação, que implica extrair cada condição com o respectivo tratamento para uma classe isolada.
+
+
+Exemplo de uma mecânica: 
+
+O contexto séria a oficina.
+que téria um método consertar, que poderia ser realizado por diversas ferramentas. 
+
+Ao invés de você ter um método consertar com diversas estruturas condicionas para poder tomar uma ação diferente dependendo de cada ferramenta que ele for utilizar, você cria uma classe para cada ferramenta, que vai implementar a interface Ferramenta e os seus métodos; pq a ídeia é que a interface seja passada como parâmetro para o método consertar, e então as suas ferramentas-classes derivadas, implementará o método específico da interface para realizar o tratamento ao qual se propões através do método da interface, que poderia, por exemplo, nesse caso ser girarChave.
+Assim, acontece que o contexto não sabéra como efetivamente isso funciona, independente se for chave de boca ou 
+chave de fenda, na hora do aperto, ela ficará responsável somente por sua chamada.
+
+
+
+
+
+
+Como muitos outros padrões de projeto comportamental, o Chain of Responsibility se baseia em transformar 
+certos comportamentos em objetos solitários chamados handlers. No nosso caso, cada checagem devem ser 
+extraída para sua própria classe com um único método que faz a checagem.
+
+O padrão sugere que você ligue esses handlers em uma corrente. 
+Cada handler ligado tem um campo para armazenar uma referência ao próximo handler da corrente. 
+
+Além de processar o algoritmo, handlers o passam adiante na corrente.
+O algoritmo, viaja através da corrente até que todos os handlers tiveram uma chance de processá-lo ou retorno seja dada por um dos handlers (podendo ser o primeiro, o segundo, o terceirou ou o último - eventualmente um retorno terá que ser devolvido - o que implicará na interrupção da cadeira).
+
+E aqui está a melhor parte: um handler pode decidir não passar o pedido adiante na corrente 
+e efetivamente parar qualquer futuro processamento.
+
+
+
+Template Method
+O padrão Template Method, sugere que que seja particionado o algoritmo em uma série de etapas, 
+que promova a padronização e reaproveitamento de código de algumas parte que estarão presente em todas as 
+outras classes que herdarem dessa superclasse.
+
+
+
+State Pattern
+
+é um 'irmão gêmeo' do Strategy, com toda aquela característica de extrair as condicionas que atende algum if, 
+para um classe própria; possuindo semelhança também com o Template Method, onde possuí uma implementação default 
+para alguns comportamentos - que eventualmente serão sobreescritas por alguma classe específica.
+
+Além desses estilos, o seu diferencial, é a definição de regras que determina a capacidade de uma classe de
+alterar/reverter seu ESTADO para outro de acordo com a lógica implementada, a ideia em sua realização gera 
+um fluxo que logo assume o comportamento da Máquina de estados finitas.
+
+
+
+
+
+Command Pattern
+
+Como qualquer outro Desgin visto anteriormente nesse curso, a ideia se baseia no princípio de segregação de 
+interesses, o que geralmente resulta em dividir a aplicação em camadas. Aqui com Command se da a mesma linha. 
+E sua principal distinção nesse segmento, é que há uma independência entre a a camada interna da mais externa, 
+de modo que a camada interna responsável por realizar tarefas do core da aplicação, pode ser acionada por 
+diversas interface, não se restringindo a um acoplamento direito com a sua chamada.
+
+O exemplo mais comum: uma camada para a interface gráfica do usuário e outra camada para a lógica do negócio. 
+A camada GUI é responsável por renderizar uma bonita imagem na tela, capturando quaisquer dados e mostrando 
+resultados do que o usuário e a aplicação estão fazendo. Contudo, quando se trata de fazer algo importante, 
+como salvar no banco de dados, a camada de interface gráfica - por exemplo, que poderia ser uma CLI (interface de 
+linha de comando), delega o trabalho para a camada mais interna - a lógica do negócio.
+
+Derivação desse pattern: Command Patern
+
+	Como contextualizado na descrição acima, se houver a necessidade de salvar algo no banco de dados ou até 
+	mesmo realizar o envio de um e-mail, pode ser necessário uma injeção de dependências - altamente 
+	recomendada nesse caso, diminuí o acoplamento entre eles, e fortemente consolidado no mercado, para 
+	trabalhar com objetos desse tipo (exemplo: PedidoRepository ou EmailService).
+
+
+
+
+
+
+
+O padrão Observer sugere que você adicione um mecanismo de assinatura para a classe publicadora para que 
+objetos individuais possam assinar ou desassinar uma corrente de eventos vindo daquela publicadora. 
+Nada tema! Nada é complicado como parece. Na verdade, esse mecanismo consiste em 
+1) um vetor para armazenar uma lista de referências aos objetos do assinante e 
+2) alguns métodos públicos que permitem adicionar assinantes e removê-los da lista.
