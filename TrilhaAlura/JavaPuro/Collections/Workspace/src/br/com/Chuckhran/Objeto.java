@@ -10,7 +10,18 @@ public class Objeto {
         this.peso = peso;
     }
 
-    @Override
+
+
+
+    //Permitir a comparação entre os objs.
+    public int compareTo(Objeto outroObj) {
+        return this.material.compareTo(outroObj.getMaterial());
+    }
+
+
+
+
+
     public String toString() {
         return "{\n" +
                 "\tmaterial: '" + material + "',"
