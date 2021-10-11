@@ -66,6 +66,12 @@ public class Ordem {
         System.out.println(objetos);
 
 
+        //Tagueando obj:
+        obj.adicionarTag("item-acessório");
+
+        System.out.println(obj);
+
+        //obj.getCategorias().add("1"); -> Operação não-suportada.
 
     }
 
