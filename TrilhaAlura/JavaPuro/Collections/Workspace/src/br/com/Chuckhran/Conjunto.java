@@ -53,7 +53,12 @@ public class Conjunto {
         //Outra característica bastante importante: todos os objetos forem inseridos devem implementar a
                                         //interfaceComparable
 
+
+
+
+
         Set genericos = new TreeSet<>();
+
         genericos.add(new Gender("Experimentativo"));
         genericos.add(new Gender("Introdutório"));
         genericos.add(new Gender("Degustativo"));
@@ -61,6 +66,33 @@ public class Conjunto {
 
         System.out.println("\nTreeSet secundário: ");
         System.out.println(genericos);
+
+
+
+
+
+
+
+        Comparator<Object> objectComparator = new Comparator<>() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                return 1;
+            }
+        };
+
+        //E se estivermos trabalhando com uma instância de uma classe que não
+        // temos acesso ou não podemos modificar para implementar Comparable:
+
+        System.out.println("\nTreeSet com Comparator parametrizado, externalizada da classe.");
+
+        Set<Metal> mostruario = new TreeSet<>(objectComparator);
+
+        mostruario.add(new Metal("Cromo"));
+        mostruario.add(new Metal("Sáfira"));
+
+        System.out.println(mostruario);
+
+
 
 
 
