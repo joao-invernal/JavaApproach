@@ -81,7 +81,7 @@ public class Conjunto {
         };
 
         //E se estivermos trabalhando com uma instância de uma classe que não
-        // temos acesso ou não podemos modificar para implementar Comparable:
+        // temos acesso ou não podemos modificar para implementar Comparable
 
         System.out.println("\nTreeSet com Comparator parametrizado, externalizada da classe.");
 
