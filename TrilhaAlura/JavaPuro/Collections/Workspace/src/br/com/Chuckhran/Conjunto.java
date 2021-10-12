@@ -1,8 +1,6 @@
 package br.com.Chuckhran;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Conjunto {
 
@@ -27,8 +25,44 @@ public class Conjunto {
         Set conjuntoTeste = Collections.emptySet();
 
         //emptySet são imutáveis. Sim!
-    // conjuntoTeste.add("A collection realmente é o que veio pra ser, um set definitivamente vazio"); Unsupported
+    // conjuntoTeste.add("A collection realmente é o que veio pra ser, um set definitivamente vazio"); ->Unsupported
         System.out.println(conjuntoTeste);
+
+
+
+        //Mais derivações ainda de Set - além de HashSet:
+
+        Set conjuntoLinkado = new LinkedHashSet(armazen);
+        conjuntoLinkado.add("Trigo");
+
+        //consegue manter a ordem na lista correspondentemente à ordem de inclusão no conjunto.
+        //	Mas de qualquer forma, ainda não é acessível através do método .get()
+
+        System.out.println("\nLinkedHashSet: ");
+        System.out.println(conjuntoLinkado);
+
+
+
+        Set arvoreRubroNegro = new TreeSet(conjuntoLinkado);
+        arvoreRubroNegro.add("Betume");
+
+        System.out.println("\nTreeSet: ");
+        System.out.println(arvoreRubroNegro); // Aparentemente ele estabelece uma ordem aos elementos.
+        // e assume uma configuração homogênea, impedidndo valores de outros tipos além do que já foi definido.
+
+        //Outra característica bastante importante: todos os objetos forem inseridos devem implementar a
+                                        //interfaceComparable
+
+        Set genericos = new TreeSet<>();
+        genericos.add(new Gender("Experimentativo"));
+        genericos.add(new Gender("Introdutório"));
+        genericos.add(new Gender("Degustativo"));
+        genericos.add(new Gender("Conclusivo"));
+
+        System.out.println("\nTreeSet secundário: ");
+        System.out.println(genericos);
+
+
 
 
 
