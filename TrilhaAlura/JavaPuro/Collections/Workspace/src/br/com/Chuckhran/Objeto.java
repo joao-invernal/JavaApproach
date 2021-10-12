@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Objeto {
+public class Objeto implements Comparable<Objeto>{
 
     private String material;
-    private int peso;
+    private double peso;
     private List categorias = new ArrayList();
 
-    public Objeto(String material, int peso) {
+    public Objeto(String material, double peso) {
         this.material = material;
         this.peso = peso;
     }
@@ -28,6 +28,11 @@ public class Objeto {
     }
 
     //Permitir a comparação entre os objs.
+/*    public int compareTo(Objeto outroObj) {
+        return this.material.compareTo(outroObj.getMaterial());
+    }*/
+
+
     public int compareTo(Objeto outroObj) {
         return this.material.compareTo(outroObj.getMaterial());
     }
@@ -49,7 +54,9 @@ public class Objeto {
         return material;
     }
 
-    public int getPeso() {
+    public double getPeso() {
         return peso;
     }
+
+
 }

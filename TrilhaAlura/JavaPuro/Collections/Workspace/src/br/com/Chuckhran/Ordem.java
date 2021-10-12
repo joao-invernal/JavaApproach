@@ -51,7 +51,7 @@ public class Ordem {
         Objeto objeto = new Objeto("Porcelana", 3);
         Objeto obj = new Objeto("Artesanal", 1);
 
-        ArrayList<Objeto> objetos = new ArrayList<>();
+        List<Objeto> objetos = new ArrayList<>();
         objetos.add(objeto);
         objetos.add(obj);
 
@@ -71,8 +71,29 @@ public class Ordem {
 
         System.out.println(obj);
 
+
+
+
+
+        objetos.add(new Objeto("Alumínio", 0.70));
+        System.out.println("Lista modificada!");
+        System.out.println(objetos);
+
+
+
+
         //obj.getCategorias().add("1"); -> Operação não-suportada.
 
+        //Collections.sort(obj.getCategorias()); Exception in thread "main" java.lang.UnsupportedOperationException
+// Devido à sua imutabilidade à lista se torna inacessível à qualquer operação externa que tente alterar o conteúdo.
+
+        //Técnica para realizar uma exibição organizada do conteúdo da lista: criar um replica com os mesmos valores
+
+        List objClone = new ArrayList(objetos);
+        Collections.sort(objClone);
+
+        System.out.println("\n\nLista ordenada: \n");
+        System.out.println(objClone);
     }
 
 }
