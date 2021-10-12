@@ -3,6 +3,7 @@ package br.com.Chuckhran;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class Objeto implements Comparable<Objeto>{
 
@@ -38,8 +39,17 @@ public class Objeto implements Comparable<Objeto>{
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        Objeto outro = (Objeto) o;
+        return outro.material.equals(material) && Double.compare(peso, outro.peso) == 0;
+        //PS: Double.compare(d1, d2) -> retorna 1 se diferente, 0 se forem iguais.
+    }
 
-
+    @Override
+    public int hashCode() {
+        return material.charAt(0) + (int) peso;
+    }
 
     public String toString() {
         return "{\n" +

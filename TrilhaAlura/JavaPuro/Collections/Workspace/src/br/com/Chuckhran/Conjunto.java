@@ -1,5 +1,6 @@
 package br.com.Chuckhran;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,8 +20,19 @@ public class Conjunto {
         //Set não permite a inclusão de elementos repetidos. Veja:
         armazen.add("Tecido egípcio");
 
-
         System.out.println(armazen);
+
+
+
+        Set conjuntoTeste = Collections.emptySet();
+
+        //emptySet são imutáveis. Sim!
+    // conjuntoTeste.add("A collection realmente é o que veio pra ser, um set definitivamente vazio"); Unsupported
+        System.out.println(conjuntoTeste);
+
+
+
+
 
 
     }
