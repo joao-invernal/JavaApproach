@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Simultaneously {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(TopLevelWriter[] args) throws IOException {
 
         //Fluxo de entrada com arquivos
 

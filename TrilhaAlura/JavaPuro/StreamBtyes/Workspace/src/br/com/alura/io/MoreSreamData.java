@@ -1,11 +1,10 @@
 package br.com.alura.io;
 
 import java.io.*;
-import java.net.Socket;
 
 public class MoreSreamData {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(TopLevelWriter[] args) throws IOException {
 
         //Outras fluxo de transmissão de dados [ENTRADA/SAÍDA]
 
@@ -32,7 +31,7 @@ public class MoreSreamData {
         while(linha != null && !linha.isEmpty()) {
             bw.write(linha);
             bw.newLine();
-            bw.flush();//fluxo retorna devolta a entrada como saída assim que pressionar o enter com o recurso flush
+            bw.flush();//Stream retorna devolta a entrada como saída assim que pressionar o enter com o recurso flush
             linha = bufferedReader.readLine();
         }
 

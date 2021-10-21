@@ -4,7 +4,8 @@ import java.io.*;
 
 public class WriterCase {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(TopLevelWriter[] args) throws IOException {
+
 
         FileOutputStream fos = new FileOutputStream("AutoType");
 

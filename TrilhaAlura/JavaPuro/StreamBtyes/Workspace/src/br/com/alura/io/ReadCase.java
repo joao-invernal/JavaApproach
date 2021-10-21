@@ -4,7 +4,7 @@ import java.io.*;
 
 public class ReadCase {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(TopLevelWriter[] args) throws IOException {
 
         FileInputStream fis = new FileInputStream("enredo.txt"); // armazenamento dos dados transmitidos
         System.out.println("Leitura de um byte de dados dessa fluxo de entrada: " + fis.read());
