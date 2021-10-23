@@ -1,4 +1,4 @@
-package br.com.alura.io;
+package br.com.alura.io.saida;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,6 +21,10 @@ public class TopLevelWriter {
         //Redundantemente (ou não) existe o PrintWriter, com praticamente a mesma função.
         PrintWriter printWriter = new PrintWriter(new File("C:\\Users\\joao_\\Lab\\Cursos\\Java\\Curso2021\\TrilhaAlura\\JavaPuro\\StreamBtyes\\Workspace\\out\\fornecimento\\newFile.txt"));
         //Instanciando um new File, abre a possibilidade de definir o caminho do destino [param. pathname] do arquivo. OBSERVE O PADRÃO ACIMA.
+
+
+
+
 
         //EXTRA:Millisegundos que se passaram desde 1 de Janeiro de 1970
         // O INICIO DA ERA UNIX

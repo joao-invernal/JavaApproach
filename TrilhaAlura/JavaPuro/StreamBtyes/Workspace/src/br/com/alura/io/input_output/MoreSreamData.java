@@ -1,4 +1,6 @@
-package br.com.alura.io;
+package br.com.alura.io.input_output;
+
+import br.com.alura.io.saida.TopLevelWriter;
 
 import java.io.*;
 
@@ -9,6 +11,7 @@ public class MoreSreamData {
         //Outras fluxo de transmissão de dados [ENTRADA/SAÍDA]
 
         InputStream inputStreamConsole = System.in; //new FileInputStream("AutoType");
+        //Produto dessa entrada será o valor digitado, nesse caso, no console,
 
         Reader leitorFluxoDeEntrada = new InputStreamReader(inputStreamConsole);
 
@@ -19,6 +22,7 @@ public class MoreSreamData {
         //Preparando o fluxo de saída:
 
         OutputStream outputStreamConsole = System.out; //FileOutputStream("RealTime.txt");
+        //A saída desse transmissão será refeltida no console.
 
         Writer osw = new OutputStreamWriter(outputStreamConsole);
 

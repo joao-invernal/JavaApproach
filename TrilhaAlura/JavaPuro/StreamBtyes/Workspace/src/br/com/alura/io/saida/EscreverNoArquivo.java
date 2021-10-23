@@ -1,4 +1,6 @@
-package br.com.alura.io;
+package br.com.alura.io.saida;
+
+import br.com.alura.io.saida.TopLevelWriter;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
