@@ -1,0 +1,1 @@
+"use strict";$(".generalTooltip__description").mouseover(function(){$(".generalTooltip__description").addClass("generalTooltip__description--enabled")}),$(".generalTooltip__description").mouseout(function(){$(".generalTooltip__description").removeClass("generalTooltip__description--enabled")});

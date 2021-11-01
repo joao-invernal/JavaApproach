@@ -1,0 +1,15 @@
+As anotações que são realizado na saída/entrada dos métodos:
+@BeforeEach -> Como forma de automatizar o processo de instânciar objetos, por exemplo, que deverão ser usados para testar alguns métodos
+@AfterEach
+
+As anotações que, entretanto, são executado na entrada/saída da classe (com exemplo):
+	@BeforeAll
+	public static void primordial() {
+		System.out.println("START\n");
+	}
+	
+	@AfterAll
+	public static void last() {
+		System.out.println("\nFINISH");
+	}
+	

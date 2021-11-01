@@ -1,0 +1,8 @@
+Javadoc -> /**
+
+Previsualicação na aba Javadoc (se não tive visível vá até o quicAcess - barra de busca do conta superior direito - e digita Javadoc
+
+
+Gerar Javadoc:
+
+Na parte superior clica em Project > Generate Javadoc

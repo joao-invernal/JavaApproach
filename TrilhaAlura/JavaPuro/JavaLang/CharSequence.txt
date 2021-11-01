@@ -1,0 +1,3 @@
+String é imutável;
+StringBuilde é mutável.
+Ambas implementam a interface CharSequence
