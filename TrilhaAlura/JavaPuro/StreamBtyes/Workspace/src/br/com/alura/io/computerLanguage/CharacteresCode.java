@@ -1,8 +1,7 @@
-package br.com.alura.io;
+package br.com.alura.io.computerLanguage;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 
 public class CharacteresCode {
 
