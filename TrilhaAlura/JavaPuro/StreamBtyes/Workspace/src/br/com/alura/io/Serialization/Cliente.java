@@ -2,9 +2,9 @@ package br.com.alura.io.Serialization;
 
 import java.io.Serializable;
 
-public class Cliente implements Serializable {
+public class Cliente {
 
-    //private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
     //ATENÇÃO: Se um objeto for instânciado com um ID diferente e serializado em arquivo binário, por exemplo,
     //e eventualmente o serialVersionUID não for mais o mesmo, haverá um incompatibilidade dos tipos, sendo, inclusive,
     //impossível atribuir aquele objeto a um atributo que possui a mesma classe porém com ID diferente,
