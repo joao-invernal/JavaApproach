@@ -1,0 +1,39 @@
+	@ResponseBody
+Descrição: Devolver à chamada da requisição como resposta o retorno de um determinado método
+Geralmente acompanhada pela anotação @RequestMapping nos GET, para responder uma informação retornada naquele method
+
+Exemplo: 
+
+@Controller
+public class controller {
+
+    @RequestMapping("/topicos")
+    @ResponseBody
+    public List<Topico> listaTopicos() {
+
+        Topico topico = new Topico("Conexto em Flutter", "O que é extamente um contexto em Flutter?",
+                new Curso("Flutter", "Programação"));
+
+        return Arrays.asList(topico, topico);
+
+    }
+
+}
+
+
+
+RESULTADO: uma um json contendo as informações desses tópicos dentro de um array será exibido para quem acessar 
+esse endereço
+
+OBS: caso o responseBody não ser definido, a expectativa do Spring é que sera recebido um página para 
+o redirecionamento, se isso não acontecer, não será disponibilizado qualquer informação
+
+
+
+
+
+
+
+	@RestController
+Descrição: Distingue do controller puro, pela capacidade de representar qualquer retorno do respectivo método que 
+esteja sendo chamada sem que seja inserido a anotação anterior (@ResponseBody)
