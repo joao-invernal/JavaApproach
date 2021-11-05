@@ -5,6 +5,19 @@ Web -> importantíssimo para trafegar as informação no famoso protocolo HTTP
 DevTools -> Evitar a necessidade de reiniciar o servidor manualmente a cada mudança no código da aplicação, 
 Automaticamente o efeito da alteração será refletido no código em tempo real durante a execução
 
+Spring Data JPA -> Persistir dados em armazenamentos SQL com Java Persistence API usando Spring Data e Hibernate.
+
+H2 -> Fornece um banco de dados na memória rápido que suporta acesso JDBC API e R2DBC, 
+com uma pegada pequena (2 MB). Suporta modos integrados e de servidor, bem como um aplicativo de 
+console baseado em navegador.
+
+
+
+
+
+
+
+
 
 
 Inserindo esses recursos através de um arquivo pom.xlm
@@ -28,10 +41,23 @@ Inserindo esses recursos através de um arquivo pom.xlm
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+    		<dependency>
+      			<groupId>org.springframework.boot</groupId>
+      			<artifactId>spring-boot-starter-data-jpa</artifactId>
+    		</dependency>
+
+    		<dependency>
+      			<groupId>com.h2database</groupId>
+      			<artifactId>h2</artifactId>
+      			<scope>runtime</scope>
+    		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -39,11 +65,13 @@ Inserindo esses recursos através de um arquivo pom.xlm
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
