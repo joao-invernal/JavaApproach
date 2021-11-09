@@ -1,6 +1,6 @@
-package br.com.alura.forum.controller.form;
+package br.com.alura.forum.modelo.form;
 
-import br.com.alura.forum.controller.repository.CursoRepository;
+import br.com.alura.forum.repository.CursoRepository;
 import br.com.alura.forum.modelo.Curso;
 import br.com.alura.forum.modelo.Topico;
 
@@ -36,7 +36,7 @@ public class TopicoForm {
 
     public Topico conversor(CursoRepository cursoRepository) {
 
-        Curso curso = cursoRepository.findByName(nomeCurso);
+        Curso curso = cursoRepository.findByNome(nomeCurso);
         return new Topico(titulo, msg, curso);
 
     }
