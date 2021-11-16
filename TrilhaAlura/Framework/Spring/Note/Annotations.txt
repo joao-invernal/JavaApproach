@@ -39,10 +39,13 @@ esteja sendo chamada sem que seja inserido a anotação anterior (@ResponseBody)
 
 
 
-
-
 Para evitar repetir a URL em todos os métodos, devemos 
 utilizar a anotação @RequestMapping em cima da classe controller;
+
+
+Para mapear requisições do tipo POST, devemos utilizar a anotação @PostMapping
+
+
 
 Exemplo: 
 
@@ -82,3 +85,7 @@ public class controller {
 
 }
 
+
+//OBS:A boa prática para métodos que cadastram informações é devolver o código HTTP 201, ao invés do código 200.
+Por isso que o Post acima, é do tipo ResponseEntity, associado ao respectivo tipo do objeto sendo cadastrado.
+E, finalmente, é respondido com a resposta esperada: ResponseEntity.created.
