@@ -33,6 +33,14 @@ o redirecionamento, se isso não acontecer, não será disponibilizado qualquer 
 
 
 
+
+
+
+
+
+
+
+
 	@RestController
 Descrição: Distingue do controller puro, pela capacidade de representar qualquer retorno do respectivo método que 
 esteja sendo chamada sem que seja inserido a anotação anterior (@ResponseBody)
@@ -89,3 +97,56 @@ public class controller {
 //OBS:A boa prática para métodos que cadastram informações é devolver o código HTTP 201, ao invés do código 200.
 Por isso que o Post acima, é do tipo ResponseEntity, associado ao respectivo tipo do objeto sendo cadastrado.
 E, finalmente, é respondido com a resposta esperada: ResponseEntity.created.
+
+
+
+
+
+
+
+
+
+
+
+
+Contexto: Definir o Interceptador.
+Descrição: Realiza o tratamento das exceções no formulários validados.
+
+How to:
+
+
+
+
+
+//Marca a classe para a interceptação das mensagens
+@RestControllerAdvice
+public class ErroDeValidacaoHandler {
+
+    @Autowired
+    private MessageSource messageSource;
+    //A classe acima tem por objetivo fornecer uma mensagem flexível que se adapta a localidade do usuário.
+    //[Veja a parametrização da sua instância no iteração do forEach do método]
+
+    //Anotação definindo que o retorno dessa exceção continuara sendo um 400, embora esta sendo tratado.
+    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
+
+    //em qualquer controller esse método deverá ser chamado caso ocorra a exceção (definida no parâmetro)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public List<ErroDeFormularioDTO> handle(MethodArgumentNotValidException exception) {
+
+        //Motivo da implementação: Retificar a mensagem de retorno e apresentar um informação mais amigável
+
+        List<ErroDeFormularioDTO> dto = new ArrayList<>();
+        List<FieldError> fieldErrors = exception.getBindingResult().getFieldErrors();
+
+        fieldErrors.forEach(e -> {
+            String mensagem = messageSource.getMessage(e, LocaleContextHolder.getLocale());
+            ErroDeFormularioDTO erro = new ErroDeFormularioDTO(e.getField(), mensagem);
+            dto.add(erro);
+        });
+
+        return dto;
+
+    }
+
+}
