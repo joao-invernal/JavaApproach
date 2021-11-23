@@ -112,11 +112,9 @@ E, finalmente, é respondido com a resposta esperada: ResponseEntity.created.
 Contexto: Definir o Interceptador.
 Descrição: Realiza o tratamento das exceções no formulários validados.
 
+
+
 How to:
-
-
-
-
 
 //Marca a classe para a interceptação das mensagens
 @RestControllerAdvice
@@ -125,7 +123,7 @@ public class ErroDeValidacaoHandler {
     @Autowired
     private MessageSource messageSource;
     //A classe acima tem por objetivo fornecer uma mensagem flexível que se adapta a localidade do usuário.
-    //[Veja a parametrização da sua instância no iteração do forEach do método]
+    //[Veja a parametrização da sua instância abaixo]
 
     //Anotação definindo que o retorno dessa exceção continuara sendo um 400, embora esta sendo tratado.
     @ResponseStatus(code = HttpStatus.BAD_REQUEST)
@@ -150,3 +148,31 @@ public class ErroDeValidacaoHandler {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Conciliação de PathVariable
+
+    Caso o nome do parâmetro nomeado no EndPoint, nesse caso {id}, for divergente do 
+    nome do parâmetro relacionado à anotação PathVariable, deve ser especificado ainda nessa situação
+    um argumento com o mesmo nome do parâmetro indicado na url. Veja: 
+
+
+@GetMapping("/{id}")
+    public TopicoDTO detalhar(@PathVariable("id") Long codigo){
+
+        ...
+
+    }
