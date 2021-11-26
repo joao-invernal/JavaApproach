@@ -42,6 +42,7 @@ public class TopicosController {
     }
 
     @PostMapping
+    @Transactional
     public ResponseEntity<TopicoDTO> cadastrar(@RequestBody @Valid TopicoForm form, UriComponentsBuilder uriBuilder) {
 
 
@@ -63,7 +64,7 @@ public class TopicosController {
     }
 
     @PutMapping("/{id}")
-    @Transactional // Essa anotação é imprescindível no método de atualização PUT
+    @Transactional //Execução do método dentro de um contexto transacional
     //Para que, após a alteração feita, ele possa ser consignado à respectiva entidade
     public ResponseEntity<TopicoDTO> resourceUpdate(@PathVariable Long id, @RequestBody @Valid AtualizacaoTopicoForm form) {
 
@@ -71,6 +72,14 @@ public class TopicosController {
 
     return ResponseEntity.ok(new TopicoDTO(topico));
 
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> remove(@PathVariable Long id) {
+
+        topicoRepository.deleteById(id);
+
+        return ResponseEntity.ok().build();
     }
 
 
