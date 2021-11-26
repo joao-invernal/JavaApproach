@@ -176,3 +176,31 @@ Conciliação de PathVariable
         ...
 
     }
+
+
+
+
+
+
+
+
+
+Commitando a alteração
+
+    Para efetivar a alteração em uma entidade no banco de dados, é necessário uma a anotação @Transactional, 
+    evidenciando a capacidade de modificação da entidade.
+
+
+
+Codify: 
+
+@PutMapping("/{id}")
+    @Transactional // Essa anotação é imprescindível no método de atualização PUT
+    //Para que, após a alteração feita, ele possa ser consignado à respectiva entidade
+    public ResponseEntity<TopicoDTO> resourceUpdate(@PathVariable Long id, @RequestBody @Valid AtualizacaoTopicoForm form) {
+
+    Topico topico = form.atualizar(id, topicoRepository);
+
+    return ResponseEntity.ok(new TopicoDTO(topico));
+
+    }

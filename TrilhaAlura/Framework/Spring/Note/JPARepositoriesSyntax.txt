@@ -1,6 +1,6 @@
 Tamplates adotado por padrão no JPA: 
 
-Seguindo o tamplate adota pelo padrão do Spring, é possível criar um query customizada, automaticamente.
+Seguindo o tamplate adota pelo padrão do Spring, é possível criar um query customizada, somente com regras semântica.
     Qual é o template? definir o nome do método com seguinte padrão:
      find + By + nomeDoAtributo
 
@@ -10,7 +10,7 @@ Seguindo o tamplate adota pelo padrão do Spring, é possível criar um query cu
     List<Topico> findByCurso_Nome(String nomeCurso);
 
 
-Se for desejado criar um personalizaçao própria, ou até mesmo criar um nome do jeito que você quiser:
+    Se for desejado criar um personalizaçao própria, ou até mesmo criar um nome do jeito que você quiser:
     Use a seguinte anotação parametrizando o filtro da consulta:
 
     @Query("SELECT t FROM Topico t where t.curso.nome = :nomeCurso")
