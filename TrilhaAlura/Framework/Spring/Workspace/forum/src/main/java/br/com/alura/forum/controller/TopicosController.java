@@ -3,7 +3,7 @@ package br.com.alura.forum.controller;
 import br.com.alura.forum.controller.DTO.TopicoDTO;
 import br.com.alura.forum.controller.DTO.DetalhesTopicoDTO;
 import br.com.alura.forum.controller.form.AtualizacaoTopicoForm;
-import br.com.alura.forum.modelo.form.TopicoForm;
+import br.com.alura.forum.controller.form.TopicoForm;
 import br.com.alura.forum.repository.CursoRepository;
 import br.com.alura.forum.modelo.Topico;
 import br.com.alura.forum.repository.TopicoRepository;
@@ -16,6 +16,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/topicos")
@@ -56,10 +57,15 @@ public class TopicosController {
 
 
     @GetMapping("/{id}")
-    public DetalhesTopicoDTO detalhar(@PathVariable Long id) {
+    public ResponseEntity<DetalhesTopicoDTO> detalhar(@PathVariable Long id) {
 
-        Topico topico = topicoRepository.getById(id);
-        return new DetalhesTopicoDTO(topico);
+        Optional<Topico> topico = topicoRepository.findById(id);
+
+        if (topico.isPresent()) {
+            return ResponseEntity.ok(new DetalhesTopicoDTO(topico.get()));
+        }
+
+        return ResponseEntity.notFound().build();
 
     }
 
@@ -68,18 +74,28 @@ public class TopicosController {
     //Para que, após a alteração feita, ele possa ser consignado à respectiva entidade
     public ResponseEntity<TopicoDTO> resourceUpdate(@PathVariable Long id, @RequestBody @Valid AtualizacaoTopicoForm form) {
 
-    Topico topico = form.atualizar(id, topicoRepository);
+        Optional<Topico> thisTopic = topicoRepository.findById(id);
+        if(thisTopic.isPresent()) {
+            Topico topico = form.atualizar(id, topicoRepository);
+            return ResponseEntity.ok(new TopicoDTO(topico));
+        }
 
-    return ResponseEntity.ok(new TopicoDTO(topico));
+        return ResponseEntity.notFound().build();
 
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> remove(@PathVariable Long id) {
 
-        topicoRepository.deleteById(id);
+        Optional<Topico> thisTopico =  topicoRepository.findById(id);
 
-        return ResponseEntity.ok().build();
+        if(thisTopico.isPresent()) {
+            topicoRepository.deleteById(id);
+            return ResponseEntity.ok().build();
+        }
+
+        return ResponseEntity.notFound().build();
+
     }
 
 
