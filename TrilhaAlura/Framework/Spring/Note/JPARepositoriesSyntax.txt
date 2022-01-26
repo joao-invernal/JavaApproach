@@ -2,11 +2,11 @@ Tamplates adotado por padrão no JPA:
 
 Seguindo o tamplate adota pelo padrão do Spring, é possível criar um query customizada, somente com regras semântica.
     Qual é o template? definir o nome do método com seguinte padrão:
-     find + By + nomeDoAtributo
+     find + By + NomeDoAtributo
 
      Se esse atributo for um objeto, e o objetivo é acessar uma de suas determinadas propriedades:
     Insira o seguinte adicional:
-    find + By + nomeDoObj_nomeDoAtributo. Conforme o método abaixo:
+    find + By + NomeDoObj_NomeDoAtributo. Conforme o método abaixo:
     List<Topico> findByCurso_Nome(String nomeCurso);
 
 
