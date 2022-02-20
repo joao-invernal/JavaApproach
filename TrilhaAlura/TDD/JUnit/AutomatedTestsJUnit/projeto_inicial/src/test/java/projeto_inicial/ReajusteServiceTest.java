@@ -17,17 +17,19 @@ public class ReajusteServiceTest {
 	
 	private ReajusteService service;
 	private Funcionario funcionario;
+	private static int TEST_TIME = 0;
 
 	@BeforeEach
 	public void startInstances() {
+		TEST_TIME++;
 		service = new ReajusteService();
 		funcionario = new Funcionario("Zilda", LocalDate.now(), new BigDecimal("1000.00"));
-		System.out.println("Inicializando...");
+		System.out.println("Inicializando o teste " + TEST_TIME);
 	}
 	
 	@AfterEach
 	public void finish() {
-		System.out.println("..Fim");
+		System.out.println("..Fim\n");
 	}
 	
 	//As anotações acima são realizado na saída/entrada dos métodos
