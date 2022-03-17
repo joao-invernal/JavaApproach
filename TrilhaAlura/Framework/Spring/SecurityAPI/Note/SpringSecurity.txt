@@ -1,6 +1,7 @@
  - Para utilizar o módulo do Spring Security, devemos adicioná-lo como dependência do projeto no arquivo pom.xml;
 
  - Para habilitar e configurar o controle de autenticação e autorização do projeto, devemos criar uma classe e anotá-la com @Configuration e @EnableWebSecurity;
+	+ No caso do projeto a classe se chama SecurityConfigurations.
 
  - Para liberar acesso a algum endpoint da nossa API, devemos chamar o método http.authorizeRequests().antMatchers().permitAll() 
 dentro do método configure(HttpSecurity http), que está na classe SecurityConfigurations;
@@ -12,6 +13,7 @@ UserDetails na classe Usuario e também implementar a interface GrantedAuthority
 
  - Para o Spring Security gerar automaticamente um formulário de login, devemos chamar o método and().formLogin(), dentro do método 
 configure(HttpSecurity http), que está na classe SecurityConfigurations;
+	+ PORÉM, esse não é um método utilizado para fazer a autenticação com token - implementado no projeto.
 
  - A lógica de autenticação, que consulta o usuário no banco de dados, deve implementar a interface UserDetailsService;
 

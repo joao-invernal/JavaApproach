@@ -5,7 +5,8 @@
  - Para utilizar JWT na API, devemos adicionar a dependência da biblioteca jjwt no arquivo pom.xml do projeto;
 
  - Para configurar a autenticação stateless no Spring Security, devemos utilizar o método 
-sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+	+ Localizada dento do método configure implementada na classe SecurityConfigurations do projeto.
 
  - Para disparar manualmente o processo de autenticação no Spring Security, devemos utilizar a classe AuthenticationManager;
 
@@ -17,3 +18,6 @@ com @Bean, na classe SecurityConfigurations, que retorna uma chamada ao método 
  - O token tem um período de expiração, que pode ser definida no arquivo application.properties;
 
  - Para injetar uma propriedade do arquivo application.properties, devemos utilizar a anotação @Value.
+	+ Exemplo: 
+	@Value("${forum.jwt.secret}") // Anotação indica propriedade para injetar. (Fonte: application.properties)
+    private String secret;
