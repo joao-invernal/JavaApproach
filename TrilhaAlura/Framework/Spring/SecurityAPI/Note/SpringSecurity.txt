@@ -16,6 +16,8 @@ configure(HttpSecurity http), que está na classe SecurityConfigurations;
 	+ PORÉM, esse não é um método utilizado para fazer a autenticação com token - implementado no projeto.
 
  - A lógica de autenticação, que consulta o usuário no banco de dados, deve implementar a interface UserDetailsService;
+	+ No caso a classe que implementou essa lógica no projeto se chama, AutenticacaoService
 
  - Devemos indicar ao Spring Security qual o algoritmo de hashing de senha que utilizaremos na API, chamando o método 
 passwordEncoder(), dentro do método configure(AuthenticationManagerBuilder auth), que está na classe SecurityConfigurations.
+	+ O hashing utilizado no projeto foi o BCryptPasswordEncoder
